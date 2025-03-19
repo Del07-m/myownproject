@@ -1,0 +1,218 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="{% static 'css/ecommerce.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/button.css' %}">
+
+</head>
+<body>
+    <!-- Navigation -->
+
+    
+
+
+    
+
+
+
+    <!-- hero page -->
+
+    <header class="hero"> 
+
+        
+        <nav class="navigation">
+    
+      
+
+
+
+                <h2>PRODUCTS</h2>
+                   
+                <section class="Products">
+                   
+                    <!-- <p>Here are some of our available products</p> -->
+
+                    <ul class="nav-links">
+
+
+                        <li>
+                            
+                            <a class="nav" href="store.html">Store</a>
+                        </li>
+                        
+                        <li>
+                            <a class="nav" href="cart.html">Cart</a>
+                        </li>
+    
+                        <li> 
+                            <a class="nav" href="http://">Log in</a>
+                        </li>
+    
+                        <li>
+                             <a class="nav" href="http://">Sign up</a>
+                        </li>
+                       
+                        
+
+
+
+                    </ul>
+                    
+                    <a class="link-cart" href="">
+                            
+                            
+                        <img 
+                        
+                        class="cart-icon" src="{% static '/images/cart-shopping.svg' %}" alt=">
+                        <p class="cart-total">0</p>
+                    
+                    </a>
+
+                  
+                   
+                   
+                
+                   
+                
+                
+                
+                </section>
+
+        </nav> 
+                   
+                    
+           
+        {% block content %}
+
+            <section>
+
+                <div class="grid">
+
+                  
+                    {% for product in objects %}
+
+                    
+
+                    <div class="Products-col">
+            
+                        <img class="pics" src="{{product.image}}" alt="" /> 
+
+
+                        <div class="product-info">
+                            <p>{{product.name}}</p>
+                            <p>{{product.price }}</p>
+                            <hr>
+                            <button  class="cart">Add to cart</button>
+                        </div>
+
+
+                        
+                        </div>
+                    
+                       
+                      
+                    
+                        
+                        
+                    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                {% endfor %}
+            
+                    
+                </div>
+            
+                
+            
+            
+               
+            
+            
+            
+            </section>
+
+             
+            {% endblock %}    
+            
+            <!-- <footer>
+                <div class="row">
+                
+                
+                    <div class="footer-col">
+                <img class="logo2" src="./images/logo-1.png" alt="">
+                
+                <p>
+                
+                    12 Army Range Road Off Eneka/Igwuruta Road P.O. Box 2737 PH, Rivers State, Nigeria
+                </p>
+                
+                <a href="">martinsdel07@gmail.com</a>
+                
+                <p>+234(0)806 487 8929,08150903462</p>
+                 
+                    </div>
+                
+                    <div class="footer-col">
+                
+                        <h2>USEFUL LINKS</h2>
+                
+                        <p>Home   About Us  Facilities    Payment
+                
+                            Apply  Admission  Scholarships</p>
+                
+                    </div>
+                
+                    <div class="footer-col">
+                        <h2>STAY UP TO DATE WITH THE LATEST NEWS.</h2>
+                
+                        <input type="text" placeholder="your email here">
+                
+                
+                    </div>
+                
+                   
+                
+                </div>
+                
+                
+                 
+                
+                
+                <div class="social-links">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-tiktok"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+                
+                
+                </footer> -->
+
+
+            
+           
+  <script src="script.js"></script>         
+</body>
+</html>
