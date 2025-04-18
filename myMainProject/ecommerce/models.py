@@ -20,6 +20,23 @@ class Product(models.Model):
 	def __str__(self):
 		return self.name
 
+		
+	@property
+	def imageURL(self):
+		try:
+			url = self.image.url
+		except:
+			url = ''
+		return url
+
+
+
+
+
+
+		
+
+
 
 
 
@@ -40,3 +57,10 @@ class OrderItem(models.Model):
 	date_added = models.DateTimeField(auto_now_add=True)
 
 
+# calculate the subtotal
+
+def get_total(self):
+    result_total =	self.product.price * self.quantity
+
+
+    return result_total

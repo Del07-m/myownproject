@@ -1,19 +1,7 @@
+ {% extends 'ecom/base.html' %}
+ {% load static %}
 
-{% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-    <link rel="stylesheet" href="{% static 'css/ecommerce.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/button.css' %}">
-
-</head>
-<body>
     <!-- Navigation -->
 
     
@@ -25,124 +13,65 @@
 
     <!-- hero page -->
 
-    <header class="hero"> 
-
-        
-        <nav class="navigation">
-    
-      
-
-
-
-                <h2>PRODUCTS</h2>
-                   
-                <section class="Products">
-                   
-                    <!-- <p>Here are some of our available products</p> -->
-
-                    <ul class="nav-links">
-
-
-                        <li>
-                            
-                            <a class="nav" href="store.html">Store</a>
-                        </li>
-                        
-                        <li>
-                            <a class="nav" href="cart.html">Cart</a>
-                        </li>
-    
-                        <li> 
-                            <a class="nav" href="http://">Log in</a>
-                        </li>
-    
-                        <li>
-                             <a class="nav" href="http://">Sign up</a>
-                        </li>
-                       
-                        
-
-
-
-                    </ul>
-                    
-                    <a class="link-cart" href="">
-                            
-                            
-                        <img 
-                        
-                        class="cart-icon" src="{% static '/images/cart-shopping.svg' %}" alt=">
-                        <p class="cart-total">0</p>
-                    
-                    </a>
-
-                  
-                   
-                   
-                
-                   
-                
-                
-                
-                </section>
-
-        </nav> 
                    
                     
            
         {% block content %}
 
-            <section>
-
-                <div class="grid">
+           <div class="container">
+            <div class="grid">
 
                   
-                    {% for product in objects %}
+                {% for product in objects %}
+
+                
+
+                <div class="Products-col">
+        
+                    <img class="pics" src="{{product.imageURL}}" alt="" /> 
+
+
+                    <div class="product-info">
+                        <p>{{product.name}}</p>
+                        <p>{{product.price }}</p>
+                        <hr>
+                        <button type="button" class="btn btn-primary">Add to cart</button>
+                    </div>
+
 
                     
-
-                    <div class="Products-col">
-            
-                        <img class="pics" src="{{product.image}}" alt="" /> 
-
-
-                        <div class="product-info">
-                            <p>{{product.name}}</p>
-                            <p>{{product.price }}</p>
-                            <hr>
-                            <button  class="cart">Add to cart</button>
-                        </div>
-
-
-                        
-                        </div>
+                    </div>
+                
+                   
+                  
+                
                     
-                       
-                      
                     
-                        
-                        
-                    
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-                {% endfor %}
-            
-                    
-                </div>
-            
+                
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            {% endfor %}
+        
+                
+            </div>
+        
+
+           </div>
+
+              
                 
             
             
@@ -150,7 +79,7 @@
             
             
             
-            </section>
+            
 
              
             {% endblock %}    
@@ -214,5 +143,3 @@
             
            
   <script src="script.js"></script>         
-</body>
-</html>

@@ -1,0 +1,40 @@
+{% extends 'ecom/base.html' %}
+{% load static %} 
+
+
+    <style>
+
+        input{
+            
+            padding: 5px;
+            display: block;
+            margin: 10px;
+            
+            
+            
+
+
+
+
+        }
+
+
+
+
+
+    </style>
+
+
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <input type="text" name="username" placeholder="Username..." >
+        <input type="password" name="password" placeholder="Password..." >
+        <input class="btn login_btn" type="submit" value="Login">
+
+
+        
+    </form>
+
+    
+    
